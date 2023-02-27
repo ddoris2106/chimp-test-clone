@@ -5,8 +5,54 @@ html {
 }
 
 body {
+	width: 100vw;
+	height: 100vh;
 	margin: 0;
 	font-family: sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	background-color: rgb(43, 135, 209);
+	color: white;
+	font: Helvetica, sans-serif;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+}
+
+.gameGrid {
+	max-width: 63.125rem;
+	height: 28.125rem;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	gap: 0.3rem;
+	align-items: center;
+}
+
+.gameTile {
+	width: 80px;
+	height: 80px;
+	border: 0.35rem solid rgba(255, 255, 255, 0.35);
+	border-radius: 12.5%;
+	font-size: 3rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gameTile .playing {
+	background: white;
+}
+
+/* Benchmark's laptop/desktop prompt */
+@media (max-width: 700px) {
+	.gameGrid {
+		display: none;
+	}
 }
