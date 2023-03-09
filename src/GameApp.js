@@ -1,29 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+// import { useRecoilState } from "recoil";
+// import { level, clickCount } from "./recoil_state";
 import GameTile from "./GameTile";
 
-import generateTileLocations from "./utils/populateTiles";
+function GameApp(props) {
+	// const [levelState, setLevelState] = useRecoilState(level);
+	// const [clickCountState, setClickCountState] = useRecoilState(clickCount);
+	const locations = props.locations;
+	console.log("New Locaions");
+	console.log(locations);
 
-function GameApp() {
-	const [level, setLevel] = useState(4);
-	const [strikes, setStrikes] = useState(0);
-	const [clickTracker, setClickTracker] = useState(0);
-	let locations = [];
-
-	generateTileLocations(locations, level);
-	// console.log(locations);
-
-	// TODO: On first click, start turn to turn tile color to white
-	// TODO: On last click, Go to recap screen if correct and increase level
-	// TODO: On every click, check if correct: update click tracker if correct, go to recap screen if incorrect and update strikes
-	// Share level, strikes, click tracker, game state with context api
-
-	// useEffect(() => {
-	// 	// When the game first starts and every time the level changes, reset locations and generate new tile locations
-	// 	locations = [];
-	// 	generateTileLocations(locations, level);
-	// 	console.log(locations);
-	// }, [level]);
-
+	// filter array of tiles to only show displayed tiles
 	return (
 		<div className="gameGrid">
 			{locations.map((location, idx) => {

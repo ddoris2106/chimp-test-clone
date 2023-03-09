@@ -26,10 +26,12 @@ const generateRamdonLocation = (locations) => {
 	}
 };
 
-const generateTileLocations = (locations, level) => {
+const generateTileLocations = (level) => {
+	let locations = [];
 	for (let i = 1; i <= level; i++) {
 		generateRamdonLocation(locations);
 	}
+	return locations;
 };
 
 export default generateTileLocations;

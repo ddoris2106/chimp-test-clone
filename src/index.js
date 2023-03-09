@@ -1,7 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RecoilRoot } from "recoil";
 import "./index.css";
-import GameApp from "./GameApp";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<GameApp />);
+
+root.render(
+	<RecoilRoot>
+		<App />
+	</RecoilRoot>
+);

@@ -4,9 +4,9 @@ Welcome/ Start Screen
 
 Game
 
-Keep track of number of strikes && level/numbers
-Keep track of first click
-Keep track of the current selection
+<COMPLETED>Keep track of number of strikes && level/numbers
+<COMPLETED>Keep track of first click
+<COMPLETED>Keep track of the current selection
 Keep track of when game is playing vs when game is over
 
 Route 1: 5 Rows of flex-rows, all populated with 8 tiles (empty and not empty)
@@ -23,5 +23,5 @@ Recap & Continue/ Play Again Screen
 
 STYLING:
 <COMPLETED>Tiles have white border
-Tiles turn to white when turn is started
+<COMPLETED>Tiles turn to white when turn is started
 <COMPLETED>Blue Background, White Text
