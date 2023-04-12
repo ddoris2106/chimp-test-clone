@@ -52,7 +52,7 @@ body {
 }
 
 .clicked {
-	display: none;
+	opacity: 0;
 }
 
 .recap {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { level, strikes, clickCount, roundStart } from "./recoil_state";
 
@@ -37,11 +37,15 @@ function GameTile({ column, row, order }) {
 		else {
 			// let numStrikes = strikesState++;
 			setStrikesState(strikesState + 1);
-			// console.log("Incorrect Click");
 			// if stikes equal three, end game
 			// Else go to recap screen
 		}
 	};
+
+	useEffect(() => {
+		// Every time a new level starts, reset the tile display
+		setIsTileDisplayed(true);
+	}, [levelState]);
 
 	// Add class name of playing when game is being played
 	return (

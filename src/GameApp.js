@@ -13,13 +13,13 @@ function GameApp(props) {
 	// filter array of tiles to only show displayed tiles
 	return (
 		<div className="gameGrid">
-			{locations.map((location, idx) => {
+			{locations.map(([key, value], idx) => {
 				let order = idx + 1;
-				const [column, row] = location;
+				const [column, row] = key;
 
 				return (
 					<GameTile
-						key={idx}
+						key={key}
 						column={column}
 						row={row}
 						order={order}
