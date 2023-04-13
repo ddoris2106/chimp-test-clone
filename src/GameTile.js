@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { level, strikes, clickCount, roundStart } from "./recoil_state";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import {
+	level,
+	strikes,
+	incorrectClick,
+	clickCount,
+	roundStart,
+} from "./recoil_state";
 
 function GameTile({ column, row, order }) {
 	const [isTileDisplayed, setIsTileDisplayed] = useState(true);
-
 	const [strikesState, setStrikesState] = useRecoilState(strikes);
 	const [clickCountState, setClickCountState] = useRecoilState(clickCount);
+	const setIncorrectClickState = useSetRecoilState(incorrectClick);
 	const [roundStartState, setRoundStartState] = useRecoilState(roundStart);
 	const levelState = useRecoilValue(level);
 
@@ -37,8 +43,7 @@ function GameTile({ column, row, order }) {
 		else {
 			// let numStrikes = strikesState++;
 			setStrikesState(strikesState + 1);
-			// if stikes equal three, end game
-			// Else go to recap screen
+			setIncorrectClickState(true);
 		}
 	};
 

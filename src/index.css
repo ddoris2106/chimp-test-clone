@@ -47,18 +47,79 @@ body {
 }
 
 .gameTile.playing {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.7);
 	/* border: none;  */
+}
+
+.gameTile:hover {
+	border: 0.35rem solid rgba(255, 255, 255, 0.5);
 }
 
 .clicked {
 	opacity: 0;
 }
 
-.recap {
-	width: 100%;
-	height: 100%;
+.start,
+.recap,
+.game-over {
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.start p,
+.recap p {
+	margin: 0.5rem;
+}
+
+.start h3,
+.recap h3,
+.game-over h3 {
+	font-size: 2.5rem;
+}
+
+.start button,
+.recap button,
+.game-over button {
+	width: 175px;
+	height: 75px;
+	background-color: rgb(255, 209, 84);
+	border: none;
+	border-radius: 0.35rem;
+	box-shadow: 0.5rem 0.5rem 2.25rem -1.25rem black;
+	font-size: 1.4rem;
+	font-weight: bold;
+	margin-top: 2.5rem;
+}
+
+.recap h3,
+.game-over h3 {
+	font-weight: normal;
+	margin: 0;
+}
+
+.recap p,
+.game-over p {
+	font-size: 3.25rem;
+	margin-bottom: 2.75rem;
+}
+
+.recap p:first-of-type,
+.game-over p:first-of-type {
+	font-size: 5rem;
+}
+
+.recap button,
+.game-over button {
+	margin-top: 0.5rem;
+}
+
+.game-over p {
+	margin-top: 1rem;
+	margin-bottom: 4rem;
 }
 
 /* Benchmark's laptop/desktop prompt */

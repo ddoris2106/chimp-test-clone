@@ -1,19 +1,31 @@
 import React from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
-import { level, strikes, roundStart, clickCount } from "./recoil_state";
+import {
+	level,
+	strikes,
+	roundStart,
+	clickCount,
+	incorrectClick,
+} from "./recoil_state";
 
 function Recap() {
-	const [strikesState, setStrikesState] = useRecoilState(strikes);
+	const strikesState = useRecoilValue(strikes);
+	const [incorrectClickState, setIncorrectClickState] =
+		useRecoilState(incorrectClick);
 	const [levelState, setLevelState] = useRecoilState(level);
-	const [roundStartState, setRoundStartState] = useRecoilState(roundStart);
-	const [clickCountState, setClickCountState] = useRecoilState(clickCount);
+	const setRoundStartState = useSetRecoilState(roundStart);
+	const setClickCountState = useSetRecoilState(clickCount);
 
 	const handleClick = (e) => {
 		e.preventDefault();
 
-		// Reset strikes, increase level, and reset round start state
-		setLevelState(levelState + 1);
+		// Reset strikes, increase level, and reset round start state if no strikes were accumulated in the round
+		if (incorrectClickState !== true) {
+			setLevelState(levelState + 1);
+		} else {
+			setIncorrectClickState(false);
+		}
 		setRoundStartState(false);
 		setClickCountState(1);
 	};

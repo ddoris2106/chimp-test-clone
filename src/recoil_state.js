@@ -15,6 +15,11 @@ const clickCount = atom({
 	default: 1,
 });
 
+const incorrectClick = atom({
+	key: "GameIncorrectClick",
+	default: false,
+});
+
 const roundStart = atom({
 	key: "GameRoundStart",
 	default: false,
@@ -31,14 +36,18 @@ const pageToRender = selector({
 		const currentClickCount = get(clickCount);
 		const currentLevel = get(level);
 		const currentStrikes = get(strikes);
-		const isRoundStart = get(roundStart);
+		const currentIncorrectClick = get(incorrectClick);
+		// const isRoundStart = get(roundStart);
 		const isGameStart = get(gameStart);
 
 		if (isGameStart === false) {
 			return "start";
 		} else if (currentStrikes === 3) {
 			return "game-over";
-		} else if (currentClickCount === currentLevel + 1 && isRoundStart) {
+		} else if (
+			currentClickCount === currentLevel + 1 ||
+			currentIncorrectClick === true
+		) {
 			return "recap";
 		} else {
 			return "game";
@@ -46,4 +55,12 @@ const pageToRender = selector({
 	},
 });
 
-export { level, strikes, clickCount, gameStart, roundStart, pageToRender };
+export {
+	level,
+	strikes,
+	clickCount,
+	incorrectClick,
+	gameStart,
+	roundStart,
+	pageToRender,
+};

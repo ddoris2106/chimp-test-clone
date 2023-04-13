@@ -14,12 +14,15 @@ function Start() {
 
 	return (
 		<div className="start">
+			<h3>Are You Smarter Than a Chimpanzee?</h3>
+			<p>Click the squares in order according to their numbers.</p>
+			<p>The test will get progressively harder.</p>
 			<button
 				onClick={(e) => {
 					handleClick(e);
 				}}
 			>
-				Start Game
+				Start Test
 			</button>
 		</div>
 	);
