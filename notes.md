@@ -1,13 +1,13 @@
 FUNTIONALITY:
 
-Welcome/ Start Screen
+<COMPLETED>Welcome/ Start Screen
 
 Game
 
 <COMPLETED>Keep track of number of strikes && level/numbers
 <COMPLETED>Keep track of first click
 <COMPLETED>Keep track of the current selection
-Keep track of when game is playing vs when game is over
+<COMPLETED>Keep track of when game is playing vs when game is over
 
 Route 1: 5 Rows of flex-rows, all populated with 8 tiles (empty and not empty)
 <COMPLETED>Route 2: 8x5 grid, only populated with not empty tiles
@@ -19,7 +19,7 @@ Route 1: 5 Rows of flex-rows, all populated with 8 tiles (empty and not empty)
 -   If yes, regenerate numbers. If no, add the number pair to the array
 -   When all numbers are generated, Generate tile with numbers and number index
 
-Recap & Continue/ Play Again Screen
+<COMPLETED>Recap & Continue/ Play Again Screen
 
 STYLING:
 <COMPLETED>Tiles have white border

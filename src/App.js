@@ -14,12 +14,10 @@ function App() {
 	const currentPageToRender = useRecoilValue(pageToRender);
 
 	const [locations, setLocations] = useState([]);
-	console.log(currentPageToRender);
 
 	// When round is over, rerender locations
 	useEffect(() => {
 		setLocations(generateTileLocations(levelState));
-		// console.log(locations);
 	}, [currentPageToRender, levelState]);
 
 	if (currentPageToRender === "start") {

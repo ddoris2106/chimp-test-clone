@@ -28,6 +28,7 @@ function GameOver() {
 	};
 
 	const handleClick = (e) => {
+		e.preventDefault();
 		resetGame();
 	};
 
