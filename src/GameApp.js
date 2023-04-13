@@ -7,15 +7,15 @@ function GameApp(props) {
 	// const [levelState, setLevelState] = useRecoilState(level);
 	// const [clickCountState, setClickCountState] = useRecoilState(clickCount);
 	const locations = props.locations;
-	console.log("New Locaions");
-	console.log(locations);
+	// console.log("New Locaions");
+	// console.log(locations);
 
 	// filter array of tiles to only show displayed tiles
 	return (
 		<div className="gameGrid">
-			{locations.map(([key, value], idx) => {
+			{locations.map(([key], idx) => {
 				let order = idx + 1;
-				const [column, row] = key;
+				const [column, row] = key.split(",");
 
 				return (
 					<GameTile

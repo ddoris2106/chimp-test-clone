@@ -12,6 +12,7 @@ import generateTileLocations from "./utils/populateTiles";
 function App() {
 	const levelState = useRecoilValue(level);
 	const currentPageToRender = useRecoilValue(pageToRender);
+	// console.log(currentPageToRender);
 
 	const [locations, setLocations] = useState([]);
 

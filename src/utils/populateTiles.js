@@ -45,12 +45,22 @@ const generateRandomLocation = (locations) => {
 	return newLocation;
 };
 
+const shuffleArray = (arr) => {
+	for (let i = arr.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[arr[i], arr[j]] = [arr[j], arr[i]];
+	}
+	return arr;
+};
+
 const generateTileLocations = (level) => {
 	let locations = {};
 	for (let i = 1; i <= level; i++) {
 		generateRandomLocation(locations);
 	}
-	return Object.entries(locations);
+
+	let shuffledArr = shuffleArray(Object.entries(locations));
+	return shuffledArr;
 };
 
 export default generateTileLocations;
